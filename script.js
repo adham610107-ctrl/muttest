@@ -1,3 +1,4 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
 diff --git a/script.js b/script.js
 index 643a42262a8dfc15b7d183770e2c5af6a2917540..eed63170fc6d026b81ec9550a44197640f0eeca9 100644
 --- a/script.js
@@ -881,3 +882,6 @@ index 643a42262a8dfc15b7d183770e2c5af6a2917540..eed63170fc6d026b81ec9550a4419764
 +        catch(e2){window.print();}
 +    }finally{if(btn){btn.innerText='⬇ Yuklab olish (PNG)';btn.disabled=false;}}
 +}
+ 
+EOF
+)
