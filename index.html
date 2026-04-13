@@ -18,9 +18,6 @@
 </head>
 <body class="light-mode" id="main-body" oncontextmenu="return false;">
 
-<!-- ============================================================
-     AUTH SCREEN
-============================================================ -->
 <div id="auth-screen" class="screen active">
     <div class="hero-overlay">
         <div class="hero-card glass-effect slide-up">
@@ -67,9 +64,6 @@
     </div>
 </div>
 
-<!-- ============================================================
-     WELCOME SCREEN
-============================================================ -->
 <div id="welcome-screen" class="screen hidden">
     <div class="hero-overlay">
         <div class="hero-card glass-effect slide-up">
@@ -98,9 +92,6 @@
     </div>
 </div>
 
-<!-- ============================================================
-     GLOBAL NAV
-============================================================ -->
 <nav class="global-nav hidden" id="global-nav">
     <div class="logo-area" onclick="logout()" title="Chiqish">
         <img src="logo.png" alt="Logo" class="nav-logo-mini" onerror="this.style.display='none'">
@@ -109,10 +100,9 @@
     <div class="nav-right">
         <button id="install-app-btn" class="install-btn hidden" title="Ilovani o'rnatish">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            O'rnatish
+            <span>O'rnatish</span>
         </button>
 
-        <!-- Comfort Eye Button -->
         <button class="comfort-eye-btn" id="comfortEyeToggle" onclick="toggleComfortEye()" title="Comfort Eye">
             <svg id="eye-closed-icon" class="eye-svg active-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
@@ -126,7 +116,7 @@
 
         <div class="streak-box" title="Davomiylik">🔥 <span id="streak-count">0</span></div>
         <button id="exit-test-btn" class="exit-mini hidden" onclick="confirmExit()">✕ <span class="exit-text">Tark etish</span></button>
-        <div id="exam-timer" class="timer-badge hidden">00:00</div>
+        
         <label class="theme-switch" title="Kun/Tun">
             <input type="checkbox" id="theme-slider" onchange="toggleTheme()">
             <span class="slider round"></span>
@@ -134,9 +124,6 @@
     </div>
 </nav>
 
-<!-- ============================================================
-     DASHBOARD
-============================================================ -->
 <div id="dashboard-screen" class="screen hidden">
     <div class="container main-content">
         <header class="dash-header slide-up">
@@ -160,7 +147,7 @@
                     <span class="stat-max">kun</span>
                 </div>
             </div>
-            <!-- Progress Trading Chart -->
+            
             <div class="progress-chart-wrap">
                 <div class="progress-chart-header">
                     <span class="chart-label">O'zlashtirish dinamikasi</span>
@@ -218,7 +205,6 @@
             </button>
         </div>
 
-        <!-- Rentgen Section on Dashboard -->
         <div class="rentgen-dashboard-wrap" id="rentgen-dashboard-wrap" style="display:none;">
             <div class="rentgen-dash-header">
                 <h3>Rentgen Tahlili</h3>
@@ -234,11 +220,6 @@
     <footer class="app-footer">© 2026 Adham's Development · Barcha huquqlar himoyalangan</footer>
 </div>
 
-<!-- ============================================================
-     MODALS
-============================================================ -->
-
-<!-- Level Modal -->
 <div id="modal-level" class="modal-overlay" onclick="closeModal(event, 'modal-level')">
     <div class="modal-content">
         <h2 id="modal-subject-title" class="modal-title">Fan</h2>
@@ -247,7 +228,6 @@
     </div>
 </div>
 
-<!-- Chapters Modal -->
 <div id="modal-chapters" class="modal-overlay" onclick="closeModal(event, 'modal-chapters')">
     <div class="modal-content">
         <h2 class="modal-title">Barcha Boblar</h2>
@@ -256,7 +236,6 @@
     </div>
 </div>
 
-<!-- Setup Modal -->
 <div id="setup-screen" class="modal-overlay" onclick="closeModal(event, 'setup-screen')">
     <div class="modal-content">
         <h2 class="modal-title">⚙ Parametrlarni Sozlash</h2>
@@ -282,14 +261,12 @@
     </div>
 </div>
 
-<!-- Result Modal -->
 <div id="modal-result" class="modal-overlay">
     <div class="modal-content text-center">
         <h2 class="modal-title">Chuqur Tahlil Natijasi</h2>
         <div class="donut" id="result-donut"><span id="result-percent">0%</span></div>
         <p class="res-msg" id="result-msg">Xabar</p>
         
-        <!-- Rentgen in result -->
         <div id="rentgen-container" class="rentgen-container">
             <h4 class="rentgen-title">Fanlar bo'yicha Rentgen Tahlili</h4>
             <div class="rentgen-filter-result">
@@ -298,7 +275,6 @@
                 <button class="rentgen-tab" onclick="setResultRentgenView('learned', this)">To'g'ri</button>
             </div>
             <div id="rentgen-bars"></div>
-            <!-- Trading-style progress line -->
             <div class="trading-chart-wrap">
                 <canvas id="tradingChart" class="trading-canvas"></canvas>
                 <div class="chart-legend" style="margin-top:8px;">
@@ -313,7 +289,6 @@
     </div>
 </div>
 
-<!-- Buy Me Coffee Modal — v12: Uzbek, blur, magic animation -->
 <div id="modal-donate" class="modal-overlay">
     <div class="modal-content text-center modal-donate-style">
         <div class="donate-icon" style="font-size:3rem; margin-bottom:8px; animation: pulse 2s infinite;">☕</div>
@@ -331,13 +306,9 @@
         <button class="btn-coffee-close" onclick="closeCoffeeModal()">
             💛 Rahmat, Ajoyib Dastur! ☕
         </button>
-        <p style="margin-top:12px; font-size:0.8rem; color:var(--text-sec); opacity:0.7;">
-            Minnatdorchilik bildirib bo'ldi? Davom eting! 🚀
-        </p>
     </div>
 </div>
 
-<!-- Certificate Modal -->
 <div id="modal-cert" class="modal-overlay cert-z-index">
     <div class="modal-content cert-wrapper">
         <div id="printable-cert" class="css-cert-container">
@@ -348,22 +319,17 @@
                 <div class="css-cert-ornament br"></div>
                 <div class="css-cert-inner">
                     <div class="cert-top-row">
-                        <div class="cert-logo-wrap">
-                            <img src="logo.png" alt="Logo" class="cert-logo" onerror="this.style.display='none'">
-                        </div>
+                        <div class="cert-logo-wrap"><img src="logo.png" alt="Logo" class="cert-logo" onerror="this.style.display='none'"></div>
                         <div class="cert-header-text">
                             <p class="cert-platform">PRO EXAM Akademik Platformasi</p>
                             <h1 class="css-cert-title">MUVAFFAQIYAT SERTIFIKATI</h1>
                         </div>
                         <div class="css-cert-seal">PREMIUM</div>
                     </div>
-                    
                     <div class="cert-divider-gold"></div>
-                    
                     <p class="css-cert-body-top">Ushbu Sertifikat</p>
                     <h2 class="css-cert-name" id="cert-student-name"></h2>
                     <p class="css-cert-body-bottom">ga intellektual sinovda yuqori darajadagi bilim va mahoratini namoyon etganligi uchun taqdim etiladi.</p>
-                    
                     <div class="css-cert-stats">
                         <div class="cert-stat-item"><span class="cert-stat-label">Rejim</span><b class="cert-stat-val" id="cert-mode-name">—</b></div>
                         <div class="cert-stat-divider"></div>
@@ -373,10 +339,7 @@
                         <div class="cert-stat-divider"></div>
                         <div class="cert-stat-item"><span class="cert-stat-label">Sana</span><b class="cert-stat-val" id="cert-date">—</b></div>
                     </div>
-
-                    <!-- Fan grafiklari sertifikatda -->
                     <div class="cert-subject-bars" id="cert-subject-bars"></div>
-                    
                     <div class="cert-bottom-row">
                         <div class="css-cert-sign">
                             <img src="imzo.png" alt="Imzo" class="css-cert-imzo-img" onerror="this.style.display='none'">
@@ -387,17 +350,13 @@
                 </div>
             </div>
         </div>
-        
         <div class="cert-modal-actions no-print">
-            <button class="btn-gold" class="cert-download-btn" onclick="downloadCertificate()">⬇ Yuklab olish (PNG)</button>
+            <button class="btn-gold cert-download-btn" onclick="downloadCertificate()">⬇ Yuklab olish (PNG)</button>
             <button class="btn-secondary" onclick="goHome()">Chiqish</button>
         </div>
     </div>
 </div>
 
-<!-- ============================================================
-     TEST SCREEN
-============================================================ -->
 <div id="test-screen" class="screen hidden">
     <div class="progress-bar-container"><div id="progress-fill"></div></div>
     
@@ -427,7 +386,6 @@
     </div>
 </div>
 
-<!-- Restart Confirm Modal -->
 <div id="modal-restart" class="modal-overlay">
     <div class="modal-content text-center">
         <h3 class="modal-title">Qayta boshlashni xohlaysizmi?</h3>
